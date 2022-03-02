@@ -1,9 +1,3 @@
-USE [PowerBI]
-
-DECLARE
-	@StartDate DATE = '1/1/2020',
-	@EndDate DATE = GETDATE()
-
 SELECT
 	CAT.[Name]
 	,CAT.[Path]
@@ -37,10 +31,10 @@ WHERE
 	CAT.[type] = 2
 	AND
 	(
-		(	EL.[TimeStart] >= @StartDate
-			AND EL.[TimeStart] <= @EndDate
-		)
-	OR
+		--(	EL.[TimeStart] >= @StartDate
+		--	AND EL.[TimeStart] <= @EndDate
+		--)
+	--OR
 		(
 			EL.[TimeStart] IS NULL
 		)
